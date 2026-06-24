@@ -1,0 +1,48 @@
+{% if page.translation_key %}
+  {% assign translations = site.posts
+    | where: "translation_key", page.translation_key
+    | sort: "lang_order"
+  %}
+
+  {% if translations.size > 1 %}
+    <nav
+      class="d-flex flex-wrap align-items-center gap-2 mb-4"
+      aria-label="Available languages"
+    >
+      <span class="text-muted small">
+        <i class="fas fa-language fa-fw" aria-hidden="true"></i>
+
+        {% if page.lang == "pt-BR" %}
+          Idioma:
+        {% else %}
+          Language:
+        {% endif %}
+      </span>
+
+      {% for translation in translations %}
+        {% assign language_label = translation.lang_name
+          | default: translation.lang
+        %}
+
+        {% if translation.url == page.url %}
+          <span
+            class="btn btn-sm btn-primary disabled"
+            aria-current="page"
+            lang="{{ translation.lang }}"
+          >
+            {{ language_label }}
+          </span>
+        {% else %}
+          <a
+            class="btn btn-sm btn-outline-primary"
+            href="{{ translation.url | relative_url }}"
+            hreflang="{{ translation.lang }}"
+            lang="{{ translation.lang }}"
+          >
+            {{ language_label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  {% endif %}
+{% endif %}

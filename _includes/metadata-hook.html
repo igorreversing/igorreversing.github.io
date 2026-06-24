@@ -1,0 +1,30 @@
+{% if page.translation_key %}
+  {% assign translations = site.posts
+    | where: "translation_key", page.translation_key
+  %}
+
+  {% for translation in translations %}
+    <link
+      rel="alternate"
+      hreflang="{{ translation.lang }}"
+      href="{{ translation.url | absolute_url }}"
+    >
+  {% endfor %}
+
+  {% assign default_translation = translations
+    | where: "lang", "en"
+    | first
+  %}
+
+  {% unless default_translation %}
+    {% assign default_translation = translations | first %}
+  {% endunless %}
+
+  {% if default_translation %}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ default_translation.url | absolute_url }}"
+    >
+  {% endif %}
+{% endif %}

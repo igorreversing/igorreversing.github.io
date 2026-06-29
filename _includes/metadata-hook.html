@@ -28,3 +28,9 @@
     >
   {% endif %}
 {% endif %}
+
+{% if page.layout == "post" %}
+<script defer src="{{ '/assets/js/glightbox-zoom-button.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/toc-stabilizer.js' | relative_url }}"></script>
+{% endif %}
+

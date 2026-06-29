@@ -47,3 +47,85 @@
 .content .table-wrapper > table.wide-table {
   min-width: 60rem;
 }
+
+.glightbox-container
+  .gslide.custom-zoom-context {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.glightbox-container
+  .gslide.custom-zoom-context
+  .ginner-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
+.glightbox-container
+  .gslide.custom-zoom-context
+  .gslide-media {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+  box-shadow: none !important;
+}
+
+.glightbox-container
+  .gslide.custom-zoom-context
+  .gslide-media
+  img {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: calc(100vw - 6rem) !important;
+  max-height: calc(100vh - 4rem) !important;
+
+  margin: auto !important;
+
+  transform-origin: center center !important;
+  will-change: transform;
+
+  user-select: none;
+  touch-action: none;
+
+  cursor: zoom-in !important;
+}
+
+.glightbox-container
+  .gslide.custom-zoomed
+  .gslide-media
+  img {
+  cursor: grab !important;
+}
+
+.glightbox-container
+  .gslide.custom-zoomed
+  .gslide-media
+  img.is-custom-panning {
+  cursor: grabbing !important;
+}
+
+.glightbox-container
+  .gslide.custom-zoomed
+  .gslide-description {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .glightbox-container
+    .gslide.custom-zoom-context
+    .gslide-media
+    img {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+  }
+}

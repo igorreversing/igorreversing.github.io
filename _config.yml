@@ -16,7 +16,7 @@ timezone:
 
 title: Igor A # the main title
 
-tagline: Cybersecurity professional who focuses on reverse engineering and malware analysis # it will display as the subtitle
+tagline: Cybersecurity professional, learning reverse engineering malwares  # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   My personal blog, mainly about reverse engineering and malware analysis.
